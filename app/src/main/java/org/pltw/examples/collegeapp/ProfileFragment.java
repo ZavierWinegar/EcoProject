@@ -64,7 +64,7 @@ public class ProfileFragment extends Fragment {
         }
         if (requestCode == REQUEST_DOB) {
             Date dob = (Date)data
-                    .getSerializableExtra(DoBPickerFragment.EXTRA_DOB);
+                    .getSerializableExtra(EnvironmentPickerFragment.EXTRA_DOB);
             mProfile.setmDateOfBirth(dob);
             updateDoB();
         }
@@ -100,7 +100,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_tundra, container, false);
 
         getActivity().setTitle(R.string.profile_title);
 
@@ -202,7 +202,7 @@ public class ProfileFragment extends Fragment {
         public void onClick(View v) {
             FragmentManager fm = getActivity()
                     .getSupportFragmentManager();
-            DoBPickerFragment dialog = DoBPickerFragment
+            EnvironmentPickerFragment dialog = EnvironmentPickerFragment
                     .newInstance(mProfile.getDateOfBirth());
             dialog.setTargetFragment(ProfileFragment.this, REQUEST_DOB);
             dialog.show(fm, DIALOG_DATE);

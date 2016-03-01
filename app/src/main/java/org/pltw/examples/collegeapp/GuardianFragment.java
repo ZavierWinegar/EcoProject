@@ -2,7 +2,6 @@ package org.pltw.examples.collegeapp;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -43,7 +42,7 @@ public class GuardianFragment extends FamilyMemberFragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_guardian, container, false);
 
-        mGuardian = (Guardian)Family.get().getFamily().get(getActivity().
+        mGuardian = (Guardian) Biome.get().getFamily().get(getActivity().
                 getIntent().getIntExtra(FamilyMember.EXTRA_INDEX,0));//new Guardian();
 
         mFirstName = (TextView)rootView.findViewById(R.id.first_name);
@@ -72,7 +71,7 @@ public class GuardianFragment extends FamilyMemberFragment {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             mGuardian.setFirstName(s.toString());
-            ArrayList<FamilyMember> family = Family.get().getFamily();
+            ArrayList<FamilyMember> family = Biome.get().getFamily();
             int index = getActivity().getIntent().getIntExtra(FamilyMember.EXTRA_INDEX,0);
             family.set(index, (FamilyMember) mGuardian);
         }
@@ -92,7 +91,7 @@ public class GuardianFragment extends FamilyMemberFragment {
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             mGuardian.setLastName(s.toString());
-            ArrayList<FamilyMember> family = Family.get().getFamily();
+            ArrayList<FamilyMember> family = Biome.get().getFamily();
             int index = getActivity().getIntent().getIntExtra(FamilyMember.EXTRA_INDEX,0);
             family.set(index, (FamilyMember) mGuardian);
 

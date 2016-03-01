@@ -1,6 +1,5 @@
 package org.pltw.examples.collegeapp;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -24,7 +23,7 @@ public class SiblingFragment extends FamilyMemberFragment {
         super.onCreateView(inflater, container, savedInstanceState);
         View rootView = inflater.inflate(R.layout.fragment_sibling, container, false);
 
-        mSibling = (Sibling)Family.get().getFamily().get(getActivity().getIntent().getIntExtra(FamilyMember.EXTRA_INDEX, 0));//new Sibling();
+        mSibling = (Sibling) Biome.get().getFamily().get(getActivity().getIntent().getIntExtra(FamilyMember.EXTRA_INDEX, 0));//new Sibling();
 
         mFirstName = (TextView)rootView.findViewById(R.id.first_name);
         mEnterFirstName = (EditText)rootView.findViewById(R.id.enter_first_name);

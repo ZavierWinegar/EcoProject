@@ -21,9 +21,7 @@ public class Profile implements ApplicantData {
     private static final String JSON_LAST_NAME = "lastName";
     private static final String JSON_DOB = "dob";
 
-    private String mFirstName;
-    private String mLastName;
-    private Date mDateOfBirth;
+
 
     public String getFirstName() {
         return mFirstName;
